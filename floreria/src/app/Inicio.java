@@ -46,7 +46,6 @@ public class Inicio extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(300, 20));
         setName("Inicio"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(778, 600));
         setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
