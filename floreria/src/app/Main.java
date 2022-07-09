@@ -17,7 +17,7 @@ public class Main {
         JFrame inicio = new Inicio();
         inicio.setVisible(true);
         
-        //stmt = reg.createStatement();
-        //stmt.executeUpdate("INSERT INTO `usuarios`(`nombre`) VALUES('Jesus')");
+        stmt = reg.createStatement();
+        stmt.executeUpdate("INSERT INTO `usuarios`(`nombre`) VALUES('Jesus')");
     }
 }
