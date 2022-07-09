@@ -18,6 +18,6 @@ public class Main {
         inicio.setVisible(true);
         
         stmt = reg.createStatement();
-        stmt.executeUpdate("INSERT INTO `usuarios`(`nombre`) VALUES('Jesus')");
+        stmt.executeUpdate("INSERT INTO `usuarios`(`nombre`) VALUES('pedro')");
     }
 }
