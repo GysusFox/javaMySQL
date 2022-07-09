@@ -9,9 +9,9 @@ public class Conexion {
     
     private static Connection conn;
     private static final String driver = "com.mysql.jdbc.Driver";
-    private static final String user = "root";
-    private static final String password = "";
-    private static final String url = "jdbc:mysql://181.171.132.189:80/floreria_store";
+    private static final String user = "theyisu8_Jesus";
+    private static final String password = "Alfonzo19712003";
+    private static final String url = "jdbc:mysql://98.142.101.90/theyisu8_floreria_store";
     
     public Conexion(){
         conn = null;
