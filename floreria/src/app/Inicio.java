@@ -9,14 +9,16 @@ package app;
  *
  * @author PC01
  */
-public class Inicio extends javax.swing.JFrame {
+import org.xml.sax.Attributes;
 
+public class Inicio extends javax.swing.JFrame {
+    static boolean panelVisibleDatos = false;
     /**
      * Creates new form Inicio
      */
     public Inicio() {
         initComponents();
-        jPanel1.setVisible(false);
+        panelCargaDatos.setVisible(panelVisibleDatos);
     }
 
     /**
@@ -34,13 +36,16 @@ public class Inicio extends javax.swing.JFrame {
         editarDatos = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        cargaFlores = new javax.swing.JButton();
-        cargaEspecies = new javax.swing.JButton();
-        cargaPedidos = new javax.swing.JButton();
+        panelCargaDatos = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        cargaFlores1 = new javax.swing.JButton();
+        cargaEspecies1 = new javax.swing.JButton();
+        cargaPedidos1 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -126,77 +131,98 @@ public class Inicio extends javax.swing.JFrame {
         );
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        panelCargaDatos.setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel1.setText("CARGA DE DATOS");
-        jPanel4.add(jLabel1);
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel2.setText("CARGA DE DATOS");
+        jPanel7.add(jLabel2);
 
-        jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 80, 5));
+        jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 80, 5));
 
-        cargaFlores.setBackground(new java.awt.Color(51, 51, 51));
-        cargaFlores.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        cargaFlores.setForeground(new java.awt.Color(255, 255, 255));
-        cargaFlores.setText("Flores");
-        cargaFlores.setBorderPainted(false);
-        cargaFlores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel5.add(cargaFlores);
+        cargaFlores1.setBackground(new java.awt.Color(51, 51, 51));
+        cargaFlores1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cargaFlores1.setForeground(new java.awt.Color(255, 255, 255));
+        cargaFlores1.setText("Flores");
+        cargaFlores1.setBorderPainted(false);
+        cargaFlores1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel8.add(cargaFlores1);
 
-        cargaEspecies.setBackground(new java.awt.Color(51, 51, 51));
-        cargaEspecies.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        cargaEspecies.setForeground(new java.awt.Color(255, 255, 255));
-        cargaEspecies.setText("Especies");
-        cargaEspecies.setBorderPainted(false);
-        cargaEspecies.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel5.add(cargaEspecies);
+        cargaEspecies1.setBackground(new java.awt.Color(51, 51, 51));
+        cargaEspecies1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cargaEspecies1.setForeground(new java.awt.Color(255, 255, 255));
+        cargaEspecies1.setText("Especies");
+        cargaEspecies1.setBorderPainted(false);
+        cargaEspecies1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel8.add(cargaEspecies1);
 
-        cargaPedidos.setBackground(new java.awt.Color(51, 51, 51));
-        cargaPedidos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        cargaPedidos.setForeground(new java.awt.Color(255, 255, 255));
-        cargaPedidos.setText("Pedidos");
-        cargaPedidos.setBorderPainted(false);
-        cargaPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cargaPedidos.addActionListener(new java.awt.event.ActionListener() {
+        cargaPedidos1.setBackground(new java.awt.Color(51, 51, 51));
+        cargaPedidos1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cargaPedidos1.setForeground(new java.awt.Color(255, 255, 255));
+        cargaPedidos1.setText("Pedidos");
+        cargaPedidos1.setBorderPainted(false);
+        cargaPedidos1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cargaPedidos1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cargaPedidosActionPerformed(evt);
+                cargaPedidos1ActionPerformed(evt);
             }
         });
-        jPanel5.add(cargaPedidos);
+        jPanel8.add(cargaPedidos1);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel10.setBackground(new java.awt.Color(255, 51, 153));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 300));
+
+        jPanel11.setBackground(new java.awt.Color(102, 255, 102));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
+
+        jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 300));
+
+        javax.swing.GroupLayout panelCargaDatosLayout = new javax.swing.GroupLayout(panelCargaDatos);
+        panelCargaDatos.setLayout(panelCargaDatosLayout);
+        panelCargaDatosLayout.setHorizontalGroup(
+            panelCargaDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelCargaDatosLayout.setVerticalGroup(
+            panelCargaDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaDatosLayout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel2.add(panelCargaDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, 378));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -205,7 +231,7 @@ public class Inicio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,12 +243,14 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cargaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaDatosActionPerformed
-        
+        if(panelVisibleDatos){
+            panelCargaDatos.setVisible(false);
+            panelVisibleDatos = false;            
+        }else{
+            panelCargaDatos.setVisible(true);
+            panelVisibleDatos = true;            
+        }
     }//GEN-LAST:event_cargaDatosActionPerformed
-
-    private void cargaPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaPedidosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cargaPedidosActionPerformed
 
     private void eliminarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarDatosActionPerformed
         // TODO add your handling code here:
@@ -235,6 +263,10 @@ public class Inicio extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void cargaPedidos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaPedidos1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cargaPedidos1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,17 +305,20 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cargaDatos;
-    private javax.swing.JButton cargaEspecies;
-    private javax.swing.JButton cargaFlores;
-    private javax.swing.JButton cargaPedidos;
+    private javax.swing.JButton cargaEspecies1;
+    private javax.swing.JButton cargaFlores1;
+    private javax.swing.JButton cargaPedidos1;
     private javax.swing.JButton editarDatos;
     private javax.swing.JButton eliminarDatos;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel panelCargaDatos;
     // End of variables declaration//GEN-END:variables
 }
