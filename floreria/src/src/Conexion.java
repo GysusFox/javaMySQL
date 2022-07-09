@@ -11,7 +11,7 @@ public class Conexion {
     private static final String driver = "com.mysql.jdbc.Driver";
     private static final String user = "root";
     private static final String password = "";
-    private static final String url = "jdbc:mysql://localhost:3306/floreria_store";
+    private static final String url = "jdbc:mysql://181.171.132.189:80/floreria_store";
     
     public Conexion(){
         conn = null;
